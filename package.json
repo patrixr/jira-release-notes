@@ -1,7 +1,7 @@
 {
   "name": "jira-release-notes",
   "version": "1.0.0",
-  "description": "",
+  "description": "Github action to generate release notes based on JIRA tickets",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/patrixr/jira-release-notes.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "action",
+    "jira",
+    "release",
+    "email"
+  ],
+  "author": "Patrick R",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/patrixr/jira-release-notes/issues"
@@ -20,6 +25,7 @@
   "dependencies": {
     "@actions/core": "^1.2.4",
     "@actions/github": "^4.0.0",
-    "@goodcity/release-notes": "^1.2.7"
+    "@goodcity/release-notes": "^1.2.7",
+    "request": "^2.88.2"
   }
 }
