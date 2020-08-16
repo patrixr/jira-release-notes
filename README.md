@@ -101,7 +101,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Generate and email notes
-      uses: actions/jira-release-notes@v1
+      uses: actions/jira-release-notes@v1.0.1
       id: pdf_generator
       with:
         head: ${{github.event.pull_request.head.sha}}
