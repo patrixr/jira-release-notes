@@ -25,7 +25,7 @@ For example, when merging into your 'live' branch, you can push out emails to th
 Github actions, when triggered on pull requests, provide the two SHAs needed to make the comparison:
 
 - `github.event.pull_request.head.sha`
-- `github.event.pull_request.head.sha`
+- `github.event.pull_request.base.sha`
 
 You can find an example below on how to use those.
 
