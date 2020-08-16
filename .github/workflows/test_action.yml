@@ -16,7 +16,7 @@ jobs:
       uses: actions/jira-release-notes@v1
       with:
         head: sample_branch_head
-        base: sample_branch_base
+        base: master
         jira-code: 'GCW'
         jira-host: ${{secrets.jira_host}}
         jira-username: ${{secrets.jira_username}}
