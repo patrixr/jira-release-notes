@@ -27,7 +27,7 @@ function readString(key) {
 }
 
 function readBoolean(key) {
-  const val = read(key);
+  const val = readString(key);
   return key === true || key === 'true';
 }
 
