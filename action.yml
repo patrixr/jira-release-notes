@@ -1,0 +1,43 @@
+name: 'Jira Release Notes'
+description: 'Github action to generate release notes based on JIRA tickets'
+inputs:
+  head:
+    description: 'The head ref or source branch'
+    required: true
+  base:
+    description: 'The base ref or source branch'
+    required: true
+  jira-code:
+    description: 'Jira ticket code e.g ABC'
+    required: true
+  jira-host:
+    description: 'Jira host e.g jira.mycompany.com'
+    required: true
+  jira-username:
+    description: 'Jira username'
+    required: true
+  jira-password:
+    description: 'Jira password'
+    required: true
+  email-to:
+    description: 'Recipients for the release notes'
+    required: false
+  sendgrid-api-key:
+    description: 'Sendgrid API key (required for emails)'
+    required: false
+  email-subject:
+    description: 'Subject of the release email'
+    required: false
+  app-name:
+    description: 'Name of the app or service'
+    required: false
+  unshallow:
+    description: 'If set to true, will unshallow the repository before fetching the commits'
+    required: false
+    default: false
+outputs:
+  pdf:
+    description: 'File path of the generated PDF file'
+runs:
+  using: 'node12'
+  main: 'index.js'

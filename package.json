@@ -1,0 +1,25 @@
+{
+  "name": "jira-release-notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrixr/jira-release-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrixr/jira-release-notes/issues"
+  },
+  "homepage": "https://github.com/patrixr/jira-release-notes#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0",
+    "@goodcity/release-notes": "^1.2.7"
+  }
+}
