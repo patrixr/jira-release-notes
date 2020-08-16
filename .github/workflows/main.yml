@@ -15,8 +15,8 @@ jobs:
     - name: Generate and email notes
       uses: ./
       with:
-        head: sample_branch_head
-        base: master
+        head: origin/sample_branch_head
+        base: origin/master
         jira-code: 'GCW'
         jira-host: ${{secrets.jira_host}}
         jira-username: ${{secrets.jira_username}}
