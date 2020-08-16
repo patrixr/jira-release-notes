@@ -43,7 +43,9 @@ function mandatory(opts, key) {
  */
 async function execute(opts = {}) {
 
-  const REPO_NAME   = opts.appName || `${repo.getRepoName()} v${repo.getRepoVersion()}`
+  const APP_VERSION = repo.getRepoVersion();
+  const APP_NAME    = opts.appName || repo.getRepoName();
+  const REPO_NAME   = `${APP_NAME} v${APP_VERSION}`
   const OUTPUT_PDF  = `./release-${REPO_NAME.replace(/ /g, '-')}.pdf`
 
   mandatory(opts, 'jiraHost');

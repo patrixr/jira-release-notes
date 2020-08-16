@@ -27,6 +27,10 @@ You can find an example below on how to use those.
 
 More information can be found [here](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#pull_request)
 
+## Important
+
+`actions/checkout@v2` creates a shallow clone of the repository by default. Which might not contain all the refs required to generate the notes. Make sure to clone a full repo, or set the `unshallow` property to true as shown below
+
 ## Inputs
 
 ### head
@@ -98,6 +102,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Generate and email notes
       uses: actions/jira-release-notes@v1
+      id: pdf_generator
       with:
         head: ${{github.event.pull_request.head.sha}}
         base: ${{github.event.pull_request.base.sha}}
@@ -108,4 +113,8 @@ jobs:
         email-to: 'john@mycompany.org,jane@mycompany.org'
         sendgrid-api-key: ${{secrets.sendgrid_api_key}}
         app-name: 'My Awesome Service'
+        unshallow: true
+    - name: Process the pdf
+      run: echo "The generated pdf was ${{ steps.pdf_generator.outputs.pdf }}"
+        
 ```
