@@ -38,6 +38,9 @@ inputs:
 outputs:
   pdf:
     description: 'File path of the generated PDF file'
+branding:
+  icon: "bell"
+  color: "purple"
 runs:
   using: 'node12'
   main: 'index.js'
