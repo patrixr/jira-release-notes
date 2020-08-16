@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Generate and email notes
-      uses: actions/jira-release-notes@v1
+      uses: ./
       with:
         head: sample_branch_head
         base: master
