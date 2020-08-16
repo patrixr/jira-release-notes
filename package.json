@@ -1,6 +1,6 @@
 {
   "name": "jira-release-notes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Github action to generate release notes based on JIRA tickets",
   "main": "index.js",
   "scripts": {
