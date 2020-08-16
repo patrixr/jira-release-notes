@@ -28,7 +28,7 @@ function readString(key) {
 
 function readBoolean(key) {
   const val = readString(key);
-  return key === true || key === 'true';
+  return val === true || val === 'true';
 }
 
 /** @type {GenerationOptions} */
