@@ -14,6 +14,12 @@ You need to provide 2 refs to the action, `head` and `base`. The action steps ar
 4. Will generate a pdf with the list of changed tickets, and output the file path under the `pdf` variable
 5. (OPTIONAL) If the `email-to` and `sendgrid-api-key` are provided, and email will be sent with the notes
 
+## Credentials: Passwords vs API Tokens
+
+JIRA supports authentication via username password. However as an alternative to using your password it is possible to substitute it with an API Token.
+
+Details are available [here](https://confluence.atlassian.com/cloud/api-tokens-938839638.html)
+
 ## Intended usage
 
 This action can compare any 2 refs (head and base). For example you could compare 2 branches together.
