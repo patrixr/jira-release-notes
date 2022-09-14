@@ -31,6 +31,10 @@ inputs:
   app-name:
     description: 'Name of the app or service'
     required: false
+  pdf:
+    description: 'If set to true, will return pdf output otherwise will return markdown output'
+    required: false
+    default: false
   unshallow:
     description: 'If set to true, will unshallow the repository before fetching the commits'
     required: false
