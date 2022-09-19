@@ -40,6 +40,7 @@ const options = {
   jiraUsername: readString('jira-username'),
   jiraPassword: readString('jira-password'),
   unshallow: readBoolean('unshallow'),
+  pdf: readBoolean('pdf'),
   emailTo: readString('email-to'),
   emailSubject: readString('email-subject'),
   sendgridApiKey: readString('sendgrid-api-key'),
@@ -48,10 +49,14 @@ const options = {
 
 async function runAction() {
   try {
-    const { pdf } = await execute(options);
-
-    core.setOutput("pdf", pdf);
-    console.log("Generated pdf " + pdf);
+    const result = await execute(options);
+    if (options.pdf) {
+      core.setOutput("pdf", result.pdf);
+      console.log("Generated pdf " + pdf);
+    } else {
+      core.setOutput("markdown", result.markdown);
+      console.log("Generated markdown: " + result.markdown);
+    }
   } catch (e) {
     const message = e && e.message || 'Something went wrong';
     core.setFailed(message);

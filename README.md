@@ -11,8 +11,11 @@ You need to provide 2 refs to the action, `head` and `base`. The action steps ar
 1. Fetch all the commits between the `head` and `base` refs
 2. Find any reference to JIRA ticket numbers, based on the `jira-code` you provide
 3. Will fetch the ticket titles using the `jira-host`, `jira-username` and `jira-password` you provide
-4. Will generate a pdf with the list of changed tickets, and output the file path under the `pdf` variable
-5. (OPTIONAL) If the `email-to` and `sendgrid-api-key` are provided, and email will be sent with the notes
+4. If `pdf` is set to true:
+   4.1. Will generate a pdf with the list of changed tickets, and output the file path under the `pdf` variable
+otherwise
+   4.2. Will generate markdown with the list of changed tickets, and output it under the `markdown` variable
+6. (OPTIONAL) If the `email-to` and `sendgrid-api-key` are provided, and email will be sent with the notes
 
 ## Credentials: Passwords vs API Tokens
 
@@ -83,6 +86,9 @@ Subject of the release email
 
 Name of the app or service
 
+### pdf
+If set to true, will generate pdf otherwise markdown, default: false
+
 ### unshallow
 
 If set to true, will unshallow the repository before fetching the commits, default: false
@@ -92,6 +98,9 @@ If set to true, will unshallow the repository before fetching the commits, defau
 ### `pdf`
 
 The path of the generated pdf
+
+### `markdown`
+The markdown generated
 
 ## Example usage
 
@@ -123,6 +132,7 @@ jobs:
         email-to: 'john@mycompany.org,jane@mycompany.org'
         sendgrid-api-key: ${{secrets.sendgrid_api_key}}
         app-name: 'My Awesome Service'
+        pdf: true
         unshallow: true
     - name: Process the pdf
       run: echo "The generated pdf was ${{ steps.pdf_generator.outputs.pdf }}"
